@@ -3,31 +3,35 @@ package com.javaseleniumtemplate.tests;
 import com.javaseleniumtemplate.GlobalParameters;
 import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.pages.LoginPage;
+import com.javaseleniumtemplate.pages.MyViewPage;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class LoginTests extends TestBase {
     //Objects
     LoginPage loginPage;
+    MyViewPage myViewPage;
 
     //Tests
     @Test
-    public void efetuarLoginEmailInvalido(){
+    public void efetuarLoginValido(){
 
         //Objects instances
         loginPage = new LoginPage();
+        myViewPage = new MyViewPage();
 
         //Parameteres
         String usuario = GlobalParameters.USUARIO_LOGIN;
         String senha = GlobalParameters.SENHA_LOGIN;
-//        String mensagemErroEsperada = "E-mail ou senha inv";
+        String mensagemInformacaoEsperada = "Logged in as: " + usuario;
 
         //Test
-//        loginPage.clicarEmAceitarCookies();
         loginPage.preenhcerUsuario(usuario);
         loginPage.preencherSenha(senha);
         loginPage.clicarEmLogin();
 
-//        Assert.assertTrue(loginPage.retornaMensagemErroLogin().contains(mensagemErroEsperada));
+        System.out.println(myViewPage.retornaMensagemLogado());
+
+        Assert.assertTrue(myViewPage.retornaMensagemLogado().contains(mensagemInformacaoEsperada));
     }
 }

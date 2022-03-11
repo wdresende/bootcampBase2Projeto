@@ -8,8 +8,6 @@ public class LoginPage extends PageBase {
     By usernameField = By.name("username");
     By passwordField = By.name("password");
     By loginButton = By.cssSelector("input[value='Login']");
-//    By cookieButton = By.xpath("//*[@aria-label='dismiss cookie message']");
-//    By errorMessageLabel = By.className("login-error");
 
     //Actions
     public void preenhcerUsuario(String usuario){
@@ -24,11 +22,4 @@ public class LoginPage extends PageBase {
         click(loginButton);
     }
 
-//    public void clicarEmAceitarCookies(){
-//        click(cookieButton);
-//    }
-
-//    public String retornaMensagemErroLogin(){
-//        return getText(errorMessageLabel);
-//    }
 }

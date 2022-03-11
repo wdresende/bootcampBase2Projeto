@@ -1,5 +1,6 @@
 package com.javaseleniumtemplate.tests;
 
+import com.javaseleniumtemplate.GlobalParameters;
 import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.pages.LoginPage;
 import org.junit.Assert;
@@ -17,16 +18,16 @@ public class LoginTests extends TestBase {
         loginPage = new LoginPage();
 
         //Parameteres
-        String usuario = "emailerrado@email.com";
-        String senha = "123456";
-        String mensagemErroEsperada = "E-mail ou senha inv";
+        String usuario = GlobalParameters.USUARIO_LOGIN;
+        String senha = GlobalParameters.SENHA_LOGIN;
+//        String mensagemErroEsperada = "E-mail ou senha inv";
 
         //Test
-        loginPage.clicarEmAceitarCookies();
+//        loginPage.clicarEmAceitarCookies();
         loginPage.preenhcerUsuario(usuario);
         loginPage.preencherSenha(senha);
         loginPage.clicarEmLogin();
 
-        Assert.assertTrue(loginPage.retornaMensagemErroLogin().contains(mensagemErroEsperada));
+//        Assert.assertTrue(loginPage.retornaMensagemErroLogin().contains(mensagemErroEsperada));
     }
 }

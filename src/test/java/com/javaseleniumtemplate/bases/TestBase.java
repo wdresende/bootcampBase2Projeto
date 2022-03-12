@@ -25,7 +25,7 @@ public class TestBase {
 
     @After
     public void afterTest(){
-//        DriverUtils.quitInstace();
+        DriverUtils.quitInstace();
     }
 
     @AfterClass
